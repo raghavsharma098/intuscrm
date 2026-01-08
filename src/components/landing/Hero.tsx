@@ -39,14 +39,14 @@ export function Hero() {
           {/* LEFT: TEXT CONTENT */}
           <div className="lg:col-span-6 relative z-20">
             <h1 className="text-[72px] lg:text-[88px] font-[800] tracking-[-0.04em] leading-[0.95] mb-8">
-              <span className="block text-[#0a2540]">Financial</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3245ff] to-[#48c9ff]">infrastructure</span>
-              <span className="block text-[#0a2540]">to grow your</span>
-              <span className="block text-[#0a2540]">revenue</span>
+              <span className="block text-[#0a2540]">Unified business</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3245ff] to-[#48c9ff]">communications</span>
+              <span className="block text-[#0a2540]">platform for</span>
+              <span className="block text-[#0a2540]">enterprises</span>
             </h1>
             
             <p className="text-[17px] text-[#425466] leading-[1.6] max-w-[520px] font-normal mb-10 opacity-90">
-              Join the millions of companies that use Stripe to accept payments online and in person, embed financial services, power custom revenue models, and build a more profitable business.
+              One dashboard to send messages, manage conversations, track leads, create invoices, and handle support. Connect with customers through SMS, WhatsApp, and Email—all from a single platform built for business growth.
             </p>
             
             <div className="flex flex-wrap items-center gap-4">
@@ -72,7 +72,7 @@ export function Hero() {
         <div className="pointer-events-none hidden lg:block absolute right-0 top-24 h-[650px] w-[min(52vw,980px)] z-10">
           <Image
             src="/images/herocomp.png"
-            alt="Stripe Dashboard and Mobile Payment Interface"
+            alt="Intus One Dashboard and Communications Interface"
             fill
             className="object-contain object-right"
             priority

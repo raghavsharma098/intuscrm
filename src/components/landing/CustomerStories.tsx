@@ -21,60 +21,63 @@ interface CompanyConfig {
 
 const COMPANY_DATA: Record<CompanyKey, CompanyConfig> = {
   amazon: {
-    tag: "Enterprise reinvention",
-    headline: "Bring agility to your enterprise",
+    tag: "E-commerce at scale",
+    headline: "Streamline customer communications",
     description:
-      "Quickly build great payments experiences, improve performance, expand into new markets, and engage customers with subscriptions and marketplaces. Get expert integration guidance from our professional services team and certified partners, and connect Stripe to Salesforce, SAP, and more through the Stripe App Marketplace.",
-    cta: "Explore Stripe for enterprises",
+      "Manage millions of order confirmations, shipping updates, and customer support conversations from one unified platform. Automate SMS notifications, handle WhatsApp inquiries, and send transactional emails—all while tracking every interaction in your CRM and maintaining complete billing transparency.",
+    cta: "Explore Intus One for e-commerce",
     logoName: "amazon",
-    cardHeadline: "See how Amazon simplified cross-border payments with Stripe",
+    cardHeadline: "See how leading e-commerce companies use Intus One to handle millions of customer conversations daily",
     stats: [
-      { value: "5+", label: "Amazon businesses on Stripe including Prime, Audible, and Amazon Pay." },
-      { value: "50+", label: "Payment methods available on Stripe" },
+      { value: "10M+", label: "Messages sent per day across SMS, WhatsApp, and Email" },
+      { value: "150+", label: "Countries reached with unified communications" },
     ],
     products: [
-      { name: "Payments", bubble: "bg-[#635bff]" },
-      { name: "Connect", bubble: "bg-[#00d4ff]" },
+      { name: "Inbox", bubble: "bg-[#635bff]" },
+      { name: "Campaigns", bubble: "bg-[#00d4ff]" },
+      { name: "Analytics", bubble: "bg-[#10b981]" },
     ],
     heroBg:
       "linear-gradient(180deg, rgba(227,160,52,0.82) 0%, rgba(227,160,52,0.82) 100%), url('https://images.unsplash.com/photo-1582719471137-c3967ffb1c34?auto=format&fit=crop&w=1600&q=80')",
     heroOverlay: "linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 100%)",
   },
   maersk: {
-    tag: "Enterprise reinvention",
-    headline: "Bring agility to your enterprise",
+    tag: "Global logistics",
+    headline: "One platform for customer engagement",
     description:
-      "Quickly build great payments experiences, improve performance, expand into new markets, and engage customers with subscriptions and marketplaces. Get expert integration guidance from our professional services team and certified partners, and connect Stripe to Salesforce, SAP, and more through the Stripe App Marketplace.",
-    cta: "Explore Stripe for enterprises",
+      "Connect with customers across continents through SMS, WhatsApp, and Email. Track shipments, send delivery updates, manage support tickets, and convert inquiries into sales—all from a single dashboard. Complete visibility into communication costs and customer interactions across your global network.",
+    cta: "Explore Intus One for logistics",
     logoName: "MAERSK",
-    cardHeadline: "See how Maersk tapped into new technology to make it easier to ship around the world",
+    cardHeadline: "See how global logistics companies use Intus One to coordinate communications across 130+ countries",
     stats: [
-      { value: "130", label: "Countries in logistics network" },
-      { value: "$10+", label: "Billion worth of goods moved around the world each year" },
+      { value: "130+", label: "Countries supported with multi-channel messaging" },
+      { value: "$50K+", label: "Monthly savings on communication infrastructure" },
     ],
     products: [
-      { name: "Payments", bubble: "bg-[#635bff]" },
-      { name: "Connect", bubble: "bg-[#00d4ff]" },
+      { name: "Helpdesk", bubble: "bg-[#635bff]" },
+      { name: "CRM", bubble: "bg-[#00d4ff]" },
+      { name: "Voice & OTP", bubble: "bg-[#10b981]" },
     ],
     heroBg:
       "linear-gradient(180deg, rgba(14,165,233,0.68) 0%, rgba(14,165,233,0.68) 100%), url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1600&q=80')",
     heroOverlay: "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 100%)",
   },
   twilio: {
-    tag: "Enterprise reinvention",
-    headline: "Bring agility to your enterprise",
+    tag: "Communications infrastructure",
+    headline: "Enterprise-grade messaging platform",
     description:
-      "Quickly build great payments experiences, improve performance, expand into new markets, and engage customers with subscriptions and marketplaces. Get expert integration guidance from our professional services team and certified partners, and connect Stripe to Salesforce, SAP, and more through the Stripe App Marketplace.",
-    cta: "Explore Stripe for enterprises",
+      "Build powerful communication workflows with SMS, WhatsApp, Email, Voice, and OTP in one platform. Manage customer conversations, automate campaigns, track leads through your sales funnel, and generate invoices—all with enterprise-level security, compliance, and detailed analytics for every interaction.",
+    cta: "Explore Intus One platform",
     logoName: "twilio",
-    cardHeadline: "See how Twilio powers global communications with secure payments",
+    cardHeadline: "See how communication platforms use Intus One to deliver enterprise messaging solutions at scale",
     stats: [
-      { value: "190+", label: "Countries supported by Twilio's platform" },
-      { value: "Millions", label: "Developers building on Twilio" },
+      { value: "99.9%", label: "Uptime SLA for mission-critical business communications" },
+      { value: "5+ channels", label: "Unified inbox for SMS, WhatsApp, Email, Voice, and more" },
     ],
     products: [
-      { name: "Payments", bubble: "bg-[#635bff]" },
-      { name: "Billing", bubble: "bg-[#10b981]" },
+      { name: "Sales", bubble: "bg-[#635bff]" },
+      { name: "Billing", bubble: "bg-[#00d4ff]" },
+      { name: "Admin", bubble: "bg-[#10b981]" },
     ],
     heroBg:
       "linear-gradient(180deg, rgba(242,47,70,0.76) 0%, rgba(242,47,70,0.76) 100%), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80')",
@@ -122,12 +125,7 @@ export function CustomerStories() {
             {company.headline}
           </h2>
           <p className="text-[15px] text-[#425466] leading-8 mb-8">
-            {company.description.split("professional services")[0]}
-            <a className="text-[#3245ff] font-semibold ml-1" href="#">professional services</a>
-            {" team and "}
-            <a className="text-[#3245ff] font-semibold" href="#">certified partners</a>
-            {", and connect Stripe to Salesforce, SAP, and more through the "}
-            <a className="text-[#3245ff] font-semibold" href="#">Stripe App Marketplace</a>.
+            {company.description}
           </p>
           <button className="inline-flex items-center gap-2 bg-[#635bff] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-200">
             {company.cta}
