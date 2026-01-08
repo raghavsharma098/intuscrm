@@ -6,14 +6,14 @@ export function DeveloperExperience() {
     <section className="relative py-24 sm:py-32">
       
       {/* Background Wrapper to manage layers */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-100 pointer-events-none">
           
           {/* Main Dark Blue Background */}
           <div className="absolute inset-x-0 top-0 bottom-0 bg-[#0a2540] transform -skew-y-6 origin-top-left -my-16 h-[calc(100%+8rem)]"></div>
           
       </div>
 
-      <div className="max-w-[1080px] mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-6 relative z-120">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             {/* Left Column: Text Content */}

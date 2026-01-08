@@ -119,7 +119,7 @@ export function FeatureShowcase() {
               </div>
 
               {/* Card 4 - Magazine (bottom left) */}
-              <div className="absolute left-0 w-84 z-30 top-58">
+              <div className="absolute left-0 w-84 z-30 top-52">
                 <Image
                   src="/images/card4.png"
                   alt="Increment magazine"
@@ -145,23 +145,6 @@ export function FeatureShowcase() {
 
         </div>
       </div>
-
-      {/* Wavy divider - dark section */}
-      <div className="relative mt-20 lg:mt-32">
-        <svg
-          className="w-full h-24 lg:h-32"
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M 0,40 Q 360,100 720,40 T 1440,40 L 1440,120 L 0,120 Z"
-            fill="#1e293b"
-          />
-        </svg>
-      </div>
-
-      {/* Dark section */}
-      <div className="bg-slate-800 py-20" />
     </section>
   );
 }

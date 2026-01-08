@@ -1,97 +1,116 @@
-import { BarChart3, MessageSquare, Users, TrendingUp, Phone, Settings, Zap, LayoutDashboard } from "lucide-react";
+"use client";
 
-const modules = [
-  { name: "Dashboard", icon: LayoutDashboard, color: "from-blue-500 to-blue-600", description: "Real-time insights" },
-  { name: "Unified Inbox", icon: MessageSquare, color: "from-purple-500 to-purple-600", description: "All messages in one place" },
-  { name: "Lead Management", icon: Users, color: "from-green-500 to-green-600", description: "Track and nurture leads" },
-  { name: "Sales Pipeline", icon: TrendingUp, color: "from-orange-500 to-orange-600", description: "Close deals faster" },
-  { name: "Voice & OTP", icon: Phone, color: "from-cyan-500 to-cyan-600", description: "Smart communication" },
-  { name: "Analytics", icon: BarChart3, color: "from-pink-500 to-pink-600", description: "Data-driven decisions" },
-];
+import { CheckCircle2, BarChart3, MessageSquare, Users, Phone, Zap } from "lucide-react";
+import Link from "next/link";
 
 export function ModularSolutions() {
+  const modules = [
+    {
+      icon: BarChart3,
+      label: "Dashboard",
+      description: "Real-time insights and analytics",
+    },
+    {
+      icon: MessageSquare,
+      label: "Unified Inbox",
+      description: "Centralized communication hub",
+    },
+    {
+      icon: Users,
+      label: "Lead Management",
+      description: "Track and nurture leads",
+    },
+    {
+      icon: Zap,
+      label: "Sales Pipeline",
+      description: "Streamline sales workflows",
+    },
+    {
+      icon: Phone,
+      label: "Voice & OTP",
+      description: "SMS and voice automation",
+    },
+    {
+      icon: BarChart3,
+      label: "Analytics",
+      description: "Deep insights into your data",
+    },
+  ];
+
+  const benefits = [
+    "Unified customer view",
+    "Automated workflows",
+    "Real-time collaboration",
+    "Advanced analytics",
+  ];
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-white py-20 lg:py-32">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-100/50 to-purple-100/50 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-100/50 to-cyan-100/50 rounded-full blur-3xl -z-10" />
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* Left content */}
-          <div className="relative">
-            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 text-sm font-semibold px-4 py-2 rounded-full mb-6">
-              <Zap className="w-4 h-4" />
-              <span>All-in-One Platform</span>
-            </div>
-            
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-slate-900 mb-6">
-              Everything you need to manage customer relationships
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left column - Text */}
+          <div className="relative pt-4">
+            <p className="text-sm font-semibold text-indigo-600 mb-4">All-in-One Platform</p>
+
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-slate-900 mb-8">
+              Everything you need to manage relationships
             </h2>
-            
+
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Intus One brings all your customer interactions, sales processes, and communication channels into a 
-              single, unified platform. No more juggling between multiple tools—everything works together seamlessly.
+              Intus One CRM brings together all the tools your team needs to manage customers, close deals, and drive growth. No more switching between apps.
             </p>
 
-            <div className="flex flex-col gap-4">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900">Seamless Integration</p>
-                  <p className="text-slate-600 text-sm">All modules work together in perfect harmony</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900">Real-time Updates</p>
-                  <p className="text-slate-600 text-sm">Stay informed with instant notifications and live data</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900">Scalable Architecture</p>
-                  <p className="text-slate-600 text-sm">Grows with your business, from startup to enterprise</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right modules grid */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              {modules.map((module, index) => (
-                <div
-                  key={module.name}
-                  className="group relative bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-200 transition-all duration-300"
-                >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${module.color} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                    <module.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-slate-900 mb-1">{module.name}</h3>
-                  <p className="text-sm text-slate-500">{module.description}</p>
+            {/* Benefits list */}
+            <div className="space-y-4 mb-10">
+              {benefits.map((benefit) => (
+                <div key={benefit} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                  <span className="text-slate-700 font-medium">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            {/* Decorative element */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full blur-3xl opacity-50 -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-50 -z-10" />
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-full transition-all"
+            >
+              Explore all modules
+              <span className="text-lg">→</span>
+            </Link>
           </div>
 
+          {/* Right column - Grid of modules */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {modules.map((module) => {
+              const Icon = module.icon;
+              return (
+                <div
+                  key={module.label}
+                  className="group relative p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-lg hover:-translate-y-1"
+                >
+                  {/* Icon badge */}
+                  <div className="mb-4 w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center group-hover:from-indigo-600 group-hover:to-purple-600 transition-all">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                    {module.label}
+                  </h3>
+                  <p className="text-sm text-slate-600">
+                    {module.description}
+                  </p>
+
+                  {/* Hover accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-full blur-2xl -z-10 group-hover:from-indigo-500/20 group-hover:to-purple-500/20 transition-all" />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

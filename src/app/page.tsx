@@ -1,14 +1,12 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
-import { Features } from "@/components/landing/Features";
 import { LogoCloud } from "@/components/landing/LogoCloud";
-import { GlobalScale } from "@/components/landing/GlobalScale";
+import { ModularSolutions } from "@/components/landing/ModularSolutions";
 import { DeveloperExperience } from "@/components/landing/DeveloperExperience";
 import { CustomerStories } from "@/components/landing/CustomerStories";
 import { LowCodeOptions } from "@/components/landing/LowCodeOptions";
 import { ReadyToStart } from "@/components/landing/ReadyToStart";
 import { Footer } from "@/components/landing/Footer";
-import { ModularSolutions } from "@/components/landing/ModularSolutions";
 import { FeatureShowcase } from "@/components/landing/FeatureShowcase";
 
 export default function Home() {
@@ -17,8 +15,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <LogoCloud />
-        <ModularSolutions />      <FeatureShowcase />        <Features />
-      <GlobalScale />
+      <ModularSolutions />
+      <FeatureShowcase />
       <DeveloperExperience />
       <CustomerStories />
       <LowCodeOptions />
