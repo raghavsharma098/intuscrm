@@ -99,15 +99,16 @@ export function Sidebar() {
         </ul>
       </nav>
 
-      {/* Collapse Button */}
-      <div className="p-4 border-t border-white/10">
-        <button
-          onClick={() => setCollapsed(!collapsed)}
-          className="w-full flex items-center justify-center p-2 text-white/70 hover:text-white hover:bg-white/5 rounded transition-colors"
-          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        >
-          {collapsed ? <ChevronRight className="h-5 w-5" /> : <ChevronLeft className="h-5 w-5" />}
-        </button>
+      <div className="p-4 border-t border-slate-100">
+        <Link href="/settings" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-50 cursor-pointer transition-colors">
+          <div className="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-medium text-slate-600">
+            JD
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-slate-900 truncate">John Doe</p>
+            <p className="text-xs text-slate-500 truncate">john@example.com</p>
+          </div>
+        </Link>
       </div>
     </aside>
   );
