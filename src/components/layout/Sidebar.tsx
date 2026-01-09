@@ -42,15 +42,15 @@ export function Sidebar() {
       </nav>
 
       <div className="p-4 border-t border-slate-100">
-        <div className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-50 cursor-pointer">
+        <Link href="/settings" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-50 cursor-pointer transition-colors">
           <div className="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-medium text-slate-600">
             JD
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-slate-900 truncate">John Doe</p>
-            <p className="text-xs text-slate-500 truncate">Admin</p>
+            <p className="text-xs text-slate-500 truncate">john@example.com</p>
           </div>
-        </div>
+        </Link>
       </div>
     </aside>
   );
