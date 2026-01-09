@@ -29,9 +29,7 @@ export function Hero() {
       <div className="relative z-20 max-w-[1400px] ml-auto pl-8 pr-0 pt-24 pb-32">
         {/* Preview Badge */}
         <div className="mb-12">
-          <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full">
-            Preview
-          </span>
+          
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-center">
@@ -39,8 +37,8 @@ export function Hero() {
           {/* LEFT: TEXT CONTENT */}
           <div className="lg:col-span-6 relative z-20">
             <h1 className="text-[72px] lg:text-[88px] font-[800] tracking-[-0.04em] leading-[0.95] mb-8">
-              <span className="block text-[#0a2540]">Unified business</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3245ff] to-[#48c9ff]">communications</span>
+              <span className="block text-[#0a2540]">Unified</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3245ff] to-[#48c9ff]">communication</span>
               <span className="block text-[#0a2540]">platform for</span>
               <span className="block text-[#0a2540]">enterprises</span>
             </h1>
@@ -51,17 +49,17 @@ export function Hero() {
             
             <div className="flex flex-wrap items-center gap-4">
               <Link 
-                href="/dashboard" 
+                href="/signup" 
                 className="bg-[#0a2540] hover:bg-[#1a365d] text-white font-semibold rounded-full px-7 py-3 transition-all flex items-center gap-2 group text-[15px] shadow-lg"
               >
                 Start now
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link 
-                href="#" 
+                href="/login" 
                 className="text-[#0a2540] font-semibold hover:text-[#425466] transition-colors flex items-center gap-2 group text-[15px]"
               >
-                Contact sales
+                Sign in
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

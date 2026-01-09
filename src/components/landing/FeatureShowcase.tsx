@@ -86,7 +86,7 @@ export function FeatureShowcase() {
             <div className="relative mx-auto max-w-7xl px-6 lg:px-8 h-[650px]">
               
               {/* Card 1 - Commutifi (top left) */}
-              <div className="absolute left-10 -top-12 w-100 z-40">
+              <div className="absolute left-10 -top-16 w-100 z-40">
                 <Image
                   src="/images/card1.png"
                   alt="Commutifi card"
@@ -119,7 +119,7 @@ export function FeatureShowcase() {
               </div>
 
               {/* Card 4 - Magazine (bottom left) */}
-              <div className="absolute left-0 w-84 z-30 top-52">
+              <div className="absolute left-14 w-60 z-30 top-46">
                 <Image
                   src="/images/card4.png"
                   alt="Increment magazine"

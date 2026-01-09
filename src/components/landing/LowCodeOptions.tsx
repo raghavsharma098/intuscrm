@@ -28,7 +28,7 @@ export function LowCodeOptions() {
                         <rect x="190" y="30" width="10" height="130" fill="#fff" /> {/* Mask right rounded corner of sidebar if needed, simplified by overlay */}
                         
                         {/* Sidebar Items */}
-                        <g> {/* Logic simulation in SVG */}
+                        <g>
                           <circle cx="60" cy="50" r="8" fill="#e3e8ee"/>
                           <rect x="52" y="70" width="16" height="4" rx="2" fill="#cbd4db"/>
                           <rect x="52" y="80" width="16" height="4" rx="2" fill="#cbd4db"/>

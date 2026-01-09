@@ -20,7 +20,7 @@ export function Navbar() {
         </div>
         
         <div className="flex items-center gap-4">
-          <Link href="/dashboard" className="text-sm font-medium text-white/90 hover:text-white hidden sm:block">
+          <Link href="/signup" className="text-sm font-medium text-white/90 hover:text-white hidden sm:block">
             Sign in
           </Link>
           <Link 
