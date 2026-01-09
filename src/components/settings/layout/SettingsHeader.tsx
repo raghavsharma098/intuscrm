@@ -8,7 +8,7 @@ export function SettingsHeader() {
     <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 sticky top-0 z-10">
       <div className="flex items-center gap-4">
         <Link 
-            href="/dashboard"
+            href="/console"
             className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-md text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium"
         >
             <div className="w-4 h-4 rounded-full bg-slate-900 flex items-center justify-center text-[10px] text-white font-bold">I</div>
