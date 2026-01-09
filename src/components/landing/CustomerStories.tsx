@@ -33,9 +33,9 @@ const COMPANY_DATA: Record<CompanyKey, CompanyConfig> = {
       { value: "150+", label: "Countries reached with unified communications" },
     ],
     products: [
-      { name: "Inbox", bubble: "bg-[#635bff]" },
-      { name: "Campaigns", bubble: "bg-[#00d4ff]" },
-      { name: "Analytics", bubble: "bg-[#10b981]" },
+      { name: "Inbox", bubble: "bg-[#3245ff]" },
+      { name: "Campaigns", bubble: "bg-[#48c9ff]" },
+      { name: "Analytics", bubble: "bg-[#BAA3FF]" },
     ],
     heroBg:
       "linear-gradient(180deg, rgba(227,160,52,0.82) 0%, rgba(227,160,52,0.82) 100%), url('https://images.unsplash.com/photo-1582719471137-c3967ffb1c34?auto=format&fit=crop&w=1600&q=80')",
@@ -54,9 +54,9 @@ const COMPANY_DATA: Record<CompanyKey, CompanyConfig> = {
       { value: "$50K+", label: "Monthly savings on communication infrastructure" },
     ],
     products: [
-      { name: "Helpdesk", bubble: "bg-[#635bff]" },
-      { name: "CRM", bubble: "bg-[#00d4ff]" },
-      { name: "Voice & OTP", bubble: "bg-[#10b981]" },
+      { name: "Helpdesk", bubble: "bg-[#3245ff]" },
+      { name: "CRM", bubble: "bg-[#48c9ff]" },
+      { name: "Voice & OTP", bubble: "bg-[#95D8FF]" },
     ],
     heroBg:
       "linear-gradient(180deg, rgba(14,165,233,0.68) 0%, rgba(14,165,233,0.68) 100%), url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1600&q=80')",
@@ -75,9 +75,9 @@ const COMPANY_DATA: Record<CompanyKey, CompanyConfig> = {
       { value: "5+ channels", label: "Unified inbox for SMS, WhatsApp, Email, Voice, and more" },
     ],
     products: [
-      { name: "Sales", bubble: "bg-[#635bff]" },
-      { name: "Billing", bubble: "bg-[#00d4ff]" },
-      { name: "Admin", bubble: "bg-[#10b981]" },
+      { name: "Sales", bubble: "bg-[#3245ff]" },
+      { name: "Billing", bubble: "bg-[#48c9ff]" },
+      { name: "Admin", bubble: "bg-[#FFA4D3]" },
     ],
     heroBg:
       "linear-gradient(180deg, rgba(242,47,70,0.76) 0%, rgba(242,47,70,0.76) 100%), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80')",
@@ -118,7 +118,7 @@ export function CustomerStories() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Top section - full width */}
         <div className="max-w-3xl mb-20">
-          <span className="text-sm font-semibold text-[#3245ff] uppercase tracking-wide">
+          <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3245ff] to-[#48c9ff] uppercase tracking-wide">
             {company.tag}
           </span>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#0a2540] leading-tight mt-4 mb-6">
@@ -127,7 +127,7 @@ export function CustomerStories() {
           <p className="text-[15px] text-[#425466] leading-8 mb-8">
             {company.description}
           </p>
-          <button className="inline-flex items-center gap-2 bg-[#635bff] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-200">
+          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3245ff] to-[#48c9ff] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-200">
             {company.cta}
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -225,7 +225,7 @@ export function CustomerStories() {
                     className="h-10 w-auto object-contain"
                   />
                   {item.interactive && active === item.key && (
-                    <div className="absolute -bottom-3 left-0 right-0 h-0.5 bg-[#3245ff] rounded-full" />
+                    <div className="absolute -bottom-3 left-0 right-0 h-0.5 bg-gradient-to-r from-[#3245ff] to-[#48c9ff] rounded-full" />
                   )}
                 </button>
               ))}
