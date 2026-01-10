@@ -1,12 +1,68 @@
 "use client";
 
-import { MessageSquare, Phone, Mail, CheckCircle2, Hash, ArrowRight, Plus, DollarSign, TrendingUp, Users, Activity, Clock, AlertCircle, X } from "lucide-react";
+import { MessageSquare, Phone, Mail, CheckCircle2, Hash, ArrowRight, Plus, DollarSign, TrendingUp, Users, Activity, Clock, AlertCircle, X, RefreshCcw } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState('for-you');
   const [showQuickActions, setShowQuickActions] = useState(false);
+  const [graphRange, setGraphRange] = useState('7d');
+  const [isLoading, setIsLoading] = useState(true);
+  const [chartData, setChartData] = useState<{name: string, sms: number, whatsapp: number, email: number}[]>([]);
+
+  // Simulation of dynamic data fetching
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      let data = [];
+      if (graphRange === '7d') {
+        data = [
+          { name: 'Mon', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+          { name: 'Tue', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+          { name: 'Wed', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+          { name: 'Thu', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+          { name: 'Fri', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+          { name: 'Sat', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+          { name: 'Sun', sms: Math.floor(Math.random() * 500) + 200, whatsapp: Math.floor(Math.random() * 400) + 100, email: Math.floor(Math.random() * 300) + 150 },
+        ];
+      } else if (graphRange === '1m') {
+        data = [
+          { name: 'Week 1', sms: Math.floor(Math.random() * 3000) + 1000, whatsapp: Math.floor(Math.random() * 2500) + 1200, email: Math.floor(Math.random() * 2000) + 800 },
+          { name: 'Week 2', sms: Math.floor(Math.random() * 3000) + 1000, whatsapp: Math.floor(Math.random() * 2500) + 1200, email: Math.floor(Math.random() * 2000) + 800 },
+          { name: 'Week 3', sms: Math.floor(Math.random() * 3000) + 1000, whatsapp: Math.floor(Math.random() * 2500) + 1200, email: Math.floor(Math.random() * 2000) + 800 },
+          { name: 'Week 4', sms: Math.floor(Math.random() * 3000) + 1000, whatsapp: Math.floor(Math.random() * 2500) + 1200, email: Math.floor(Math.random() * 2000) + 800 },
+        ];
+      } else {
+        data = [
+          { name: 'Jan', sms: 8000, whatsapp: 6000, email: 4000 },
+          { name: 'Feb', sms: 7500, whatsapp: 6500, email: 4200 },
+          { name: 'Mar', sms: 9000, whatsapp: 7000, email: 4800 },
+          { name: 'Apr', sms: 8800, whatsapp: 7200, email: 4600 },
+          { name: 'May', sms: 10500, whatsapp: 8000, email: 5000 },
+          { name: 'Jun', sms: 11000, whatsapp: 8500, email: 5500 },
+        ];
+      }
+      setChartData(data);
+      setIsLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [graphRange]);
+
+  const distributionData = useMemo(() => {
+    if (chartData.length === 0) return [];
+    const totalSms = chartData.reduce((acc, curr) => acc + curr.sms, 0);
+    const totalWhatsapp = chartData.reduce((acc, curr) => acc + curr.whatsapp, 0);
+    const totalEmail = chartData.reduce((acc, curr) => acc + curr.email, 0);
+    return [
+      { name: 'SMS', value: totalSms, color: '#3245ff' },
+      { name: 'WhatsApp', value: totalWhatsapp, color: '#48c9ff' },
+      { name: 'Email', value: totalEmail, color: '#BAA3FF' },
+    ];
+  }, [chartData]);
+
+  const rangeLabel = graphRange === '7d' ? 'last 7 days' : graphRange === '1m' ? 'last month' : 'this year';
 
   const tabs = [
     { id: 'for-you', label: 'For You' },
@@ -113,6 +169,107 @@ export default function DashboardPage() {
             <p className="text-sm text-slate-600 font-medium">New Leads</p>
             <p className="text-3xl font-bold text-slate-900">142</p>
             <p className="text-xs text-slate-500">This week</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Channel Usage Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Trend Graph */}
+        <div className="lg:col-span-2 bg-white rounded-lg border border-slate-200 p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+            <div>
+              <h2 className="text-lg font-bold text-slate-900">Channel Usage Trends</h2>
+              <p className="text-sm text-slate-500">Message volume over the {rangeLabel}</p>
+            </div>
+            <div className="flex bg-slate-100 p-1 rounded-lg">
+              {[
+                { id: '7d', label: '7 Days' },
+                { id: '1m', label: 'Month' },
+                { id: '1y', label: 'Year' }
+              ].map((range) => (
+                <button
+                  key={range.id}
+                  onClick={() => setGraphRange(range.id)}
+                  className={`px-4 py-1.5 text-xs font-semibold rounded-md transition-all ${
+                    graphRange === range.id
+                      ? 'bg-white text-[#3245ff] shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  {range.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div className="h-[300px] w-full relative">
+            {isLoading && (
+              <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px] z-10 flex items-center justify-center">
+                <RefreshCcw className="h-8 w-8 text-[#3245ff] animate-spin" />
+              </div>
+            )}
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
+                <Tooltip 
+                  cursor={{fill: '#f8fafc'}} 
+                  contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'}} 
+                />
+                <Legend iconType="circle" wrapperStyle={{ paddingTop: '20px' }} />
+                <Bar dataKey="sms" name="SMS" fill="#3245ff" radius={[4, 4, 0, 0]} maxBarSize={40} />
+                <Bar dataKey="whatsapp" name="WhatsApp" fill="#48c9ff" radius={[4, 4, 0, 0]} maxBarSize={40} />
+                <Bar dataKey="email" name="Email" fill="#BAA3FF" radius={[4, 4, 0, 0]} maxBarSize={40} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Distribution Donut Chart */}
+        <div className="bg-white rounded-lg border border-slate-200 p-6">
+          <h2 className="text-lg font-bold text-slate-900 mb-2">Channel Distribution</h2>
+          <p className="text-sm text-slate-500 mb-8">Share by message type</p>
+          
+          <div className="h-[250px] w-full relative">
+            {isLoading && (
+              <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px] z-10 flex items-center justify-center">
+                <RefreshCcw className="h-8 w-8 text-[#3245ff] animate-spin" />
+              </div>
+            )}
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={distributionData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={80}
+                  paddingAngle={5}
+                  dataKey="value"
+                >
+                  {distributionData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+
+          <div className="space-y-3 mt-4">
+            {distributionData.map((item) => (
+              <div key={item.name} className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}></div>
+                  <span className="text-sm font-medium text-slate-700">{item.name}</span>
+                </div>
+                <span className="text-sm font-bold text-slate-900">
+                  {Math.round((item.value / distributionData.reduce((a, b) => a + b.value, 0)) * 100)}%
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
